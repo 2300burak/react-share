@@ -5,7 +5,7 @@ import firebase from "../firebase/firebase.utils"
 
 
 
-function Signup() {
+function Signin() {
     console.log("firebase",firebase)
     const formik = useFormik({
         initialValues: {
@@ -14,7 +14,7 @@ function Signup() {
           displayname:"",
         },
         onSubmit: values => {
-          firebase.register(values.email,values.password);
+          firebase.login(values.email,values.password);
         },
       });
       console.log(formik)
@@ -42,26 +42,17 @@ function Signup() {
                                 name="password" />
 
                     </Grid>
-                    <Grid item xs={12}>
-                        <TextField 
-                                id="outlined-basic" 
-                                label="Displayname" 
-                                variant="outlined"
-                                onChange= {formik.handleChange}
-                                value={formik.values.displayname}
-                                name="displayname" />
-
-                    </Grid>
+                 
                     <Grid item xs={12}>
                         
                         <Button type="submit" variant="contained" color="primary" >
-                            Register
+                            Login
                         </Button>
                     </Grid>
                     <Grid item xs={12}>
 
                         <Button variant="contained" color="primary" onClick={handleWithGoogle}>
-                            Signup with Gooogle
+                            Login with Gooogle
                         </Button>
                     </Grid>
                 </Grid> 
@@ -70,4 +61,4 @@ function Signup() {
     )
 }
 
-export default Signup
+export default Signin

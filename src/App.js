@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Signup from "./pages/Signup"
+import Signin from "./pages/Signin"
 import Navbar from "./components/Navbar"
 
 function App() {
@@ -13,8 +14,8 @@ function App() {
 
 
        */}
-       <Navbar></Navbar>
-       <Signup></Signup>
+       <Navbar/>
+       <Signin/>
     </div>
   );
 }
